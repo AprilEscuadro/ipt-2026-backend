@@ -7,8 +7,8 @@ info:
 servers:
   - url: http://localhost:4000
     description: Local development server
-  - url: http://localhost:4000
-    description: Local development server
+  - url: https://ipt-2026-backend-a1n8.onrender.com
+    description: Production server
 
 components:
   securitySchemes:
