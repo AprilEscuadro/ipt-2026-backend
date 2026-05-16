@@ -10,7 +10,8 @@ const config = {
     emailFrom: process.env.EMAIL_FROM || 'karlee.lind@ethereal.email',
     smtpOptions: {
         host: process.env.SMTP_HOST || 'smtp.ethereal.email',
-        port: 587,
+        port: 465,
+        secure: true,
         auth: {
             user: process.env.SMTP_USER || 'karlee.lind@ethereal.email',
             pass: process.env.SMTP_PASS || ''
