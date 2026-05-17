@@ -26,8 +26,12 @@ export default {
 async function authenticate({ email, password, ipAddress }: any) {
     const account = await db.Account.scope('withHash').findOne({ where: { email } });
 
-    if (!account || !(await bcrypt.compare(password, account.passwordHash))) {
-    throw 'Email or password is incorrect';
+    if (!account) {
+    throw 'Email not registered';
+    }
+    
+    if (!(await bcrypt.compare(password, account.passwordHash))) {
+        throw 'Email or password is incorrect';
     }
     
     if (!account.isVerified) {
